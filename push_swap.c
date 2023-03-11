@@ -6,12 +6,12 @@
 /*   By: tvo <tvo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 23:03:13 by tvo               #+#    #+#             */
-/*   Updated: 2023/02/11 20:19:27 by tvo              ###   ########.fr       */
+/*   Updated: 2023/03/11 23:02:26 by tvo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/libft.h"
+# include "libft/libft.h"
 
 void	print_split(char *av)
 {
@@ -33,7 +33,7 @@ int	main(int ac, char *av[])
 	if (ac > 1)
 	{
 		int		i;
-		t_list	*a;
+		t_pile	*a;
 
 		a = NULL;
 		i = 0;

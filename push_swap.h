@@ -4,15 +4,16 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-typedef struct	s_list
+
+typedef struct s_pile
 {
-	int data;
-	struct s_list	*next;
-} t_list;
+	int			data;
+	struct s_pile	*next;
+}	t_pile;
 
 
-t_list	*add_elem(int data);
-void	display_pile(t_list  *head);
-void	add_last(t_list **head, int data);
-void	display_pile(t_list  *head);
+// t_pile	*add_elem(int data);
+void	display_pile(t_pile  *head);
+void	add_last(t_pile **head, int data);
+
 #endif

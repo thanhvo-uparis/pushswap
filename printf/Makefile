@@ -6,7 +6,7 @@
 #    By: tvo <tvo@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 17:11:15 by tvo               #+#    #+#              #
-#    Updated: 2023/01/31 18:11:09 by tvo              ###   ########.fr        #
+#    Updated: 2023/03/10 22:28:49 by tvo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ RM				= rm -f
 
 CFLAGS			= -Wall -Wextra -Werror
 
-NAME			= libftprintf.a
+NAME			= printf.a
 
 all:			$(NAME)
 
@@ -47,5 +47,5 @@ re:				fclean $(NAME)
 
 %.o : 			%.c
 				${CC} ${CFLAGS} -c $< -o $@
-				
+
 -include ${DEPS}
