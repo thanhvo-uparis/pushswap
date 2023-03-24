@@ -1,3 +1,7 @@
 *.out
+*.o
+*.a
 libft/*.o
+libft/*.d
 printf/*.o
+test/*.out
