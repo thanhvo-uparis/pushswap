@@ -6,7 +6,7 @@
 /*   By: tvo <tvo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 12:37:57 by tvo               #+#    #+#             */
-/*   Updated: 2023/03/23 17:42:47 by tvo              ###   ########.fr       */
+/*   Updated: 2023/03/24 17:46:29 by tvo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,4 @@ int	ft_strlen_av(char **av)
 	while (*av++)
 		len++;
 	return (len);
-}
-
-int ps_atoi(char *str)
-{
-	int	signe;
-
-	if (*str > 48 || *str < 57)
 }

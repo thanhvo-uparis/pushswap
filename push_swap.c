@@ -6,12 +6,11 @@
 /*   By: tvo <tvo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 23:03:13 by tvo               #+#    #+#             */
-/*   Updated: 2023/03/24 14:26:31 by tvo              ###   ########.fr       */
+/*   Updated: 2023/03/24 17:54:23 by tvo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-# include "libft/libft.h"
 
 void	push_swap(char **av)
 {
@@ -32,13 +31,19 @@ void	push_swap(char **av)
 		return ;
 	}
 	i = 0;
-	*av++;
+	av++;
 	while (i < size_av)
 	{
 		pile.a[i] = ft_atoi(av[i]);
 		i++;
 	}
-	printf("value of pile a: %d-->%d", pile.a[0], pile.a[1]);
+	swap_a(&pile);
+	i = 0;
+	while (i < size_av)
+	{
+		printf("%d-->", pile.a[i]);
+		i++;
+	}
 }
 
 int	main(int ac, char **av)

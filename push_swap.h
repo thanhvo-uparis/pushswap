@@ -3,7 +3,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
-
+# include "libft/libft.h"
 
 typedef struct s_pile
 {
@@ -19,7 +19,7 @@ typedef struct s_pile
 void	display_pile(t_pile  *head);
 void	add_last(t_pile **head, int data);
 // swap
-void	swap_a(t_pile *pile, int bonus);
+void	swap_a(t_pile *pile);
 // push
 // utils
 int	ft_strlen_av(char **av);
