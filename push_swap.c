@@ -6,11 +6,33 @@
 /*   By: tvo <tvo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 23:03:13 by tvo               #+#    #+#             */
-/*   Updated: 2023/03/24 17:54:23 by tvo              ###   ########.fr       */
+/*   Updated: 2023/03/24 20:20:05 by tvo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	printf_pile_a(t_pile pile, int size)
+{
+	int	i = 0;
+
+	while (i < size)
+	{
+		printf("%d-->", pile.a[i]);
+		i++;
+	}
+}
+
+void	printf_pile_b(t_pile pile, int size)
+{
+	int	i = 0;
+
+	while (i < size)
+	{
+		printf("%d-->", pile.b[i]);
+		i++;
+	}
+}
 
 void	push_swap(char **av)
 {
@@ -38,12 +60,9 @@ void	push_swap(char **av)
 		i++;
 	}
 	swap_a(&pile);
-	i = 0;
-	while (i < size_av)
-	{
-		printf("%d-->", pile.a[i]);
-		i++;
-	}
+	printf_pile_a(pile, size_av);
+	free(pile.a);
+	free(pile.b);
 }
 
 int	main(int ac, char **av)
