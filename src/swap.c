@@ -6,7 +6,7 @@
 /*   By: tvo <tvo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 18:10:06 by tvo               #+#    #+#             */
-/*   Updated: 2023/03/28 22:26:39 by tvo              ###   ########.fr       */
+/*   Updated: 2023/03/28 22:30:11 by tvo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ t_pile	*swap_b(t_head *head)
 	return (pile_b);
 }
 
-// void	swap_ss(t_head *head)
-// {
-// 	swap_a(head);
-// 	swap_b(head);
-// 	printf("ss");
-// }
+void	swap_ss(t_head *head)
+{
+	head->pile_a = swap_a(head);
+	head->pile_b = swap_b(head);
+	printf("ss");
+}
