@@ -1,62 +1,65 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_v1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvo <tvo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 23:03:13 by tvo               #+#    #+#             */
-/*   Updated: 2023/03/28 21:44:56 by tvo              ###   ########.fr       */
+/*   Updated: 2023/03/26 23:30:21 by tvo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	printf_pile_a(t_pile pile, int size)
-// {
-// 	int	i = 0;
+void	printf_pile_a(t_pile pile, int size)
+{
+	int	i = 0;
 
-// 	while (i < size)
-// 	{
-// 		printf("%d-->", pile.a[i]);
-// 		i++;
-// 	}
-// }
+	while (i < size)
+	{
+		printf("%d-->", pile.a[i]);
+		i++;
+	}
+}
 
-// void	printf_pile_b(t_pile pile, int size)
-// {
-// 	int	i = 0;
+void	printf_pile_b(t_pile pile, int size)
+{
+	int	i = 0;
 
-// 	while (i < size)
-// 	{
-// 		printf("%d-->", pile.b[i]);
-// 		i++;
-// 	}
-// }
+	while (i < size)
+	{
+		printf("%d-->", pile.b[i]);
+		i++;
+	}
+}
 
 void	push_swap(char **av)
 {
-	t_head	*head = malloc(sizeof(t_head));
+	t_pile	pile;
 	int	size_av;
 	int	i;
 
-	head->pile_a = NULL;
-	head->pile_b = NULL;
-	size_av = ft_strlen_argv(av);
-	i = 1;
+	size_av = ft_strlen_av(av);
+	pile.size_a = size_av;
+	pile.a = malloc(sizeof(int) * size_av);
+	if (!pile.a)
+		return ;
+	pile.b = malloc(sizeof(int) * size_av);
+	if (!pile.b)
+	{
+		free(pile.a);
+		return ;
+	}
+	i = 0;
+	av++;
 	while (i < size_av)
 	{
-		add_last_pile(head, ft_atoi(av[i]));
+		pile.a[i] = ft_atoi(av[i]);
 		i++;
 	}
-	t_pile *tmp = swap_a(head);
-	while (tmp != NULL)
-	{
-		printf("%d-->", tmp->data);
-		tmp = tmp->next;
-	}
-	free(head);
-	free(tmp);
+	swap_a(&pile);
+	printf_pile_a(pile, size_av);
 }
 
 int	main(int ac, char **av)

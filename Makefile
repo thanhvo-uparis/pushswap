@@ -6,11 +6,11 @@
 #    By: tvo <tvo@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/11 16:58:40 by tvo               #+#    #+#              #
-#    Updated: 2023/03/24 17:52:12 by tvo              ###   ########.fr        #
+#    Updated: 2023/03/28 21:57:06 by tvo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			=	pile.c push_swap.c swap.c utils.c src/swap.c\
+SRCS			=	pile.c push_swap.c src/swap.c utils.c
 
 OBJS			= $(SRCS:.c=.o)
 
@@ -20,14 +20,17 @@ CC				= gcc
 
 RM				= rm -f
 
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror -g3
 
-NAME			= push_swap.a
+NAME			= push_swap
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+				${CC} $(OBJS) ${CFLAGS} libft/libft.a -o $(NAME)
+
+%.o : 			%.c
+				${CC} ${CFLAGS} -c $< -o $@
 
 clean:
 				$(RM) $(OBJS) ${DEPS}
@@ -37,7 +40,6 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-%.o : 			%.c
-				${CC} ${CFLAGS} -c $< -o $@
+
 
 -include ${DEPS}

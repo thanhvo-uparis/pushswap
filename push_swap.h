@@ -7,20 +7,25 @@
 
 typedef struct s_pile
 {
-	int			*a;
-	int			*b;
-	int			size_a;
-	int			size_b;
-	struct s_pile	*next;
+	int	data;
+	struct s_pile *next;
+
 }	t_pile;
+
+typedef struct	s_head
+{
+	struct s_pile	*pile_a;
+	struct s_pile	*pile_b;
+} t_head;
 
 
 // t_pile	*add_elem(int data);
 void	display_pile(t_pile  *head);
-void	add_last(t_pile **head, int data);
+// void	add_last(t_pile **head, int data);
 // swap
-void	swap_a(t_pile *pile);
+t_pile	*swap_a(t_head *head);
 // push
 // utils
-int	ft_strlen_av(char **av);
+int	ft_strlen_argv(char **av);
+t_pile	*add_last_pile(t_head *begin, int data);
 #endif

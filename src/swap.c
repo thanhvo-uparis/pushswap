@@ -6,41 +6,43 @@
 /*   By: tvo <tvo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 18:10:06 by tvo               #+#    #+#             */
-/*   Updated: 2023/03/24 18:16:27 by tvo              ###   ########.fr       */
+/*   Updated: 2023/03/28 22:21:46 by tvo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	swap_a(t_pile *pile)
+t_head	*swap_a(t_head *head)
 {
+	t_pile	*pile_a = head->pile_a;
 	int	tmp;
 
-	if (pile->a[0] == NULL || pile->a[1] == NULL)
-		return ;
-	tmp = pile->a[0];
-	pile->a[0] = pile->a[1];
-	pile->a[1] = tmp;
-	printf("sa");
+	if (pile_a == NULL || pile_a->next == NULL)
+		return pile_a;
+	tmp = pile_a->data;
+	pile_a->data = pile_a->next->data;
+	pile_a->next->data = tmp;
+	printf("sa\n");
+	return (pile_a);
 }
 
-void	swap_b(t_pile *pile)
+t_pile	*swap_b(t_head *head)
 {
+	t_pile	*pile_b = head->pile_b;
 	int	tmp;
 
-	if (pile->b[0] == NULL || pile->b[1] == NULL)
-		return ;
-	tmp = pile->b[0];
-	pile->b[0] = pile->b[1];
-	pile->b[1] = tmp;
-	printf("sb");
+	if (pile_b == NULL || pile_b->next == NULL)
+		return pile_b;
+	tmp = pile_b->data;
+	pile_b->data = pile_b->next->data;
+	pile_b->next->data = tmp;
+	printf("sb\n");
+	return (pile_b);
 }
 
-void	swap_ss(t_pile *pile)
+void	swap_ss(t_head *head)
 {
-	swap_a(pile);
-	swap_b(pile);
+	swap_a(head);
+	swap_b(head);
 	printf("ss");
 }
-
-
