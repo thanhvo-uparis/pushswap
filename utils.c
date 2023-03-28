@@ -6,7 +6,7 @@
 /*   By: tvo <tvo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 12:37:57 by tvo               #+#    #+#             */
-/*   Updated: 2023/03/28 21:38:43 by tvo              ###   ########.fr       */
+/*   Updated: 2023/03/28 23:59:22 by tvo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,3 +76,12 @@ t_pile	*add_last_pile(t_head *head, int data)
 // 		}
 // 	}
 // }
+
+void	ft_print_pile(t_pile *pile)
+{
+	while (pile != NULL)
+	{
+		printf("%d-->", pile->data);
+		pile = pile->next;
+	}
+}

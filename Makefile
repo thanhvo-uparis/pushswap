@@ -6,11 +6,11 @@
 #    By: tvo <tvo@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/11 16:58:40 by tvo               #+#    #+#              #
-#    Updated: 2023/03/28 21:57:06 by tvo              ###   ########.fr        #
+#    Updated: 2023/03/28 23:41:04 by tvo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			=	pile.c push_swap.c src/swap.c utils.c
+SRCS			=	pile.c push_swap.c src/swap.c src/push.c utils.c
 
 OBJS			= $(SRCS:.c=.o)
 
