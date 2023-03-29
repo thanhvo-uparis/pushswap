@@ -6,18 +6,11 @@
 /*   By: tvo <tvo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 04:24:46 by tvo               #+#    #+#             */
-/*   Updated: 2023/03/29 21:55:00 by tvo              ###   ########.fr       */
+/*   Updated: 2023/03/29 22:34:10 by tvo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-// void shift_down_a(t_head *head)
-// {
-// 	t_pile	*current = head->pile_a;
-// 	if (head->pile_a == NULL || current->next == NULL)
-// 		return ;
-// }
 
 // void shift_down(t_head *head)
 // {
@@ -89,25 +82,21 @@
 //     last->data = new_last->data;
 // }
 
+// 4-->8-->2-->5.
+// new_last pointe vers 4-->8-->2-->NULL
+// last: 5->NULL
 void shift_down(t_head *head)
 {
     if (head->pile_a == NULL || head->pile_a->next == NULL)
-    {
-        return;
-    }
-    t_pile *last = head->pile_a;
-    t_pile *new_last = NULL;
-
-    while (last->next != NULL)
-    {
-        new_last = last;
-        last = last->next;
-    }
-    new_last->next = NULL;
-
-    last->next = head->pile_a;
-    head->pile_a = last;
-    last->data = head->pile_a->data;
-
-    free(new_last->next);
+		return ;
+	t_pile	*last = head->pile_a;
+	t_pile	*new_last = NULL;
+	while (last->next != NULL)
+	{
+		new_last = last;
+		last = last->next;
+	}
+	new_last->next = NULL;
+	last->next = head->pile_a;
+	head->pile_a = last; // pile_a-->5-->4-->8-->2->NULL
 }
