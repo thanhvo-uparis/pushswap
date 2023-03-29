@@ -28,6 +28,12 @@ t_pile	*swap_a(t_head *head);
 t_pile	*ft_push_pile(t_pile **bf, t_pile **bi);
 void	push_b(t_head *head);
 void	push_a(t_head *head);
+// rotate
+void shift_up_a(t_head *head);
+void shift_up_b(t_head *head);
+void shift_up_ab(t_head *head);
+// reverse rotate
+void shift_down(t_head *head);
 // utils
 int	ft_strlen_argv(char **av);
 t_pile	*add_last_pile(t_head *begin, int data);
