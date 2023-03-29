@@ -6,7 +6,7 @@
 /*   By: tvo <tvo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 15:44:49 by tvo               #+#    #+#             */
-/*   Updated: 2023/03/29 01:44:45 by tvo              ###   ########.fr       */
+/*   Updated: 2023/03/29 17:44:27 by tvo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	push_b(t_head *head)
 		tmp->next = head->pile_b;
 		head->pile_b = tmp;
 	}
-	printf("sb");
+	printf("sb\n");
 }
 
 void	push_a(t_head *head)
@@ -33,5 +33,5 @@ void	push_a(t_head *head)
 		tmp->next = head->pile_a;
 		head->pile_a = tmp;
 	}
-	printf("sb");
+	printf("sa\n");
 }
